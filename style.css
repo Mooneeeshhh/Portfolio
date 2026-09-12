@@ -1,3 +1,6 @@
+/* =====================================================
+   MUNISH KUMAR PORTFOLIO - FINAL STYLE
+===================================================== */
 
 /* ================= ROOT + RESET ================= */
 
@@ -9,9 +12,9 @@
     --text: #f1f5f9;
     --text-muted: #9ca3af;
 
-    --green: #22c55e;
-    --green-dark: #16a34a;
-    --blue: #38bdf8;
+    --green: #EAB308;
+--green-dark: #A16207;
+--blue: #60A5FA;
 
     --border: rgba(255, 255, 255, 0.10);
 
