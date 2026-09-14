@@ -1,24 +1,4 @@
-// ==============================
-// SAFE PAGE LOADER
-// ==============================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const loader = document.getElementById("loader");
-
-    if (loader) {
-
-        setTimeout(function () {
-            loader.classList.add("hide");
-        }, 1800);
-
-    }
-
-});
-// ==============================
-// PAGE LOADER
-// ==============================
-
+// Page loader
 window.addEventListener("load", function () {
     const loader = document.getElementById("loader");
 
@@ -30,10 +10,7 @@ window.addEventListener("load", function () {
 });
 
 
-// ==============================
-// CUSTOM CURSOR
-// ==============================
-
+// Custom cursor
 const cursor = document.createElement("div");
 cursor.classList.add("custom-cursor");
 document.body.appendChild(cursor);
@@ -58,10 +35,7 @@ clickableElements.forEach(function (element) {
 });
 
 
-// ==============================
-// SCROLL REVEAL
-// ==============================
-
+// Scroll animations
 const revealElements = document.querySelectorAll(
     ".section, .hero-terminal, .project-card, .skill-card, .certificate-card"
 );
@@ -88,19 +62,14 @@ revealElements.forEach(function (element) {
 });
 
 
-// ==============================
-// ACTIVE NAVIGATION
-// ==============================
-
+// Active navigation link
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", function () {
-
     let currentSection = "";
 
     sections.forEach(function (section) {
-
         const sectionTop = section.offsetTop - 150;
         const sectionHeight = section.offsetHeight;
 
@@ -113,7 +82,6 @@ window.addEventListener("scroll", function () {
     });
 
     navLinks.forEach(function (link) {
-
         link.classList.remove("active-link");
 
         if (link.getAttribute("href") === "#" + currentSection) {
@@ -123,14 +91,10 @@ window.addEventListener("scroll", function () {
 });
 
 
-// ==============================
-// NAVBAR SCROLL EFFECT
-// ==============================
-
+// Navbar on scroll
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", function () {
-
     if (!navbar) return;
 
     if (window.scrollY > 50) {
@@ -141,25 +105,17 @@ window.addEventListener("scroll", function () {
 });
 
 
-// ==============================
-// MAGNETIC BUTTON EFFECT
-// ==============================
-
+// Button hover effect
 const magneticButtons = document.querySelectorAll(
     ".btn, .nav-button, .project-link"
 );
 
 magneticButtons.forEach(function (button) {
-
     button.addEventListener("mousemove", function (e) {
-
         const rect = button.getBoundingClientRect();
 
-        const x =
-            e.clientX - rect.left - rect.width / 2;
-
-        const y =
-            e.clientY - rect.top - rect.height / 2;
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
         button.style.transform =
             "translate(" + (x * 0.15) + "px, " +
@@ -172,15 +128,11 @@ magneticButtons.forEach(function (button) {
 });
 
 
-// ==============================
-// BACKGROUND GLOW EFFECT
-// ==============================
-
+// Background movement
 const glowOne = document.querySelector(".glow-one");
 const glowTwo = document.querySelector(".glow-two");
 
 document.addEventListener("mousemove", function (e) {
-
     const x = e.clientX / window.innerWidth;
     const y = e.clientY / window.innerHeight;
 
@@ -198,46 +150,23 @@ document.addEventListener("mousemove", function (e) {
 });
 
 
-// ==============================
-// CONTACT FORM
-// ==============================
-
-
-// ==============================
-// MOBILE HAMBURGER MENU
-// ==============================
-
+// Mobile navigation
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
 
 if (hamburger && mobileMenu) {
-
     hamburger.addEventListener("click", function () {
-
         hamburger.classList.toggle("active");
-
         mobileMenu.classList.toggle("active");
-
         document.body.classList.toggle("menu-open");
-
     });
-
-
-    // Close menu after clicking a link
 
     mobileMenuLinks.forEach(function (link) {
-
         link.addEventListener("click", function () {
-
             hamburger.classList.remove("active");
-
             mobileMenu.classList.remove("active");
-
             document.body.classList.remove("menu-open");
-
         });
-
     });
-
 }
